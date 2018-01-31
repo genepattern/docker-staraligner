@@ -18,8 +18,12 @@ RUN wget http://ftp-trace.ncbi.nlm.nih.gov/sra/ngs/1.3.0/ngs-sdk.1.3.0-linux.tar
     tar xzvf ngs-sdk.1.3.0-linux.tar.gz
 
 # Install  StarAligner
-WORKDIR /tmp
-# TODO
+WORKDIR /star_install
+RUN wget https://github.com/alexdobin/STAR/archive/2.5.3a.tar.gz && \
+    tar -xzf 2.5.3a.tar.gz && \
+    cd STAR-2.5.3a 
+    
+ENV PATH="/star_install/STAR-2.5.3a/bin/Linux_x86_64:${PATH}"
 
 RUN    pip install awscli 
 
