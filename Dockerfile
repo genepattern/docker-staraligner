@@ -38,7 +38,7 @@ RUN chmod ugo+x /usr/local/bin/runS3OnBatch.sh /usr/local/bin/runLocal.sh
 
 RUN apt-get update && \
    apt-get install zip --yes
-
+RUN cpan -f Archive::Zip
 
 CMD ["/usr/local/bin/runS3OnBatch.sh" ]
 
