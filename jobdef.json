@@ -16,7 +16,7 @@
         "vcpus": 1,
         "volumes": []
     },
-    "jobDefinitionName": "StarAligner",
+    "jobDefinitionName": "STAR",
     "parameters": {
         "exe1": "-u",
         "inputFileDirectory": "job_22345",

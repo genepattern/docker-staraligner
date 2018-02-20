@@ -27,12 +27,8 @@ ENV PATH="/star_install/STAR-2.5.3a/bin/Linux_x86_64:${PATH}"
 
 RUN    pip install awscli 
 
-COPY Dockerfile /build/Dockerfile
-COPY jobdef.json /build/jobdef.json
 COPY common/container_scripts/runS3OnBatch.sh /usr/local/bin/runS3OnBatch.sh
 COPY common/container_scripts/runLocal.sh /usr/local/bin/runLocal.sh
-#COPY runS3Batch_prerun_custom.sh /usr/local/bin/runS3Batch_prerun_custom.sh
-#COPY runS3Batch_postrun_custom.sh /usr/local/bin/runS3Batch_postrun_custom.sh
 
 RUN chmod ugo+x /usr/local/bin/runS3OnBatch.sh /usr/local/bin/runLocal.sh 
 

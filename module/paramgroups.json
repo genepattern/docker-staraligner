@@ -1,0 +1,38 @@
+[{name:"input",
+  parameters:["star.index",
+              "reads.pair.1",
+              "reads.pair.2",
+             ]
+ },{name:"mapping and reporting of mapped reads",
+    parameters:["max.reads.to.align",
+                "align.read.end.to.end",
+                "max.number.mismatches",
+                "max.fraction.mistaches",
+                "min.overhang.annotated.read",
+                "min.overhang.not.annotated.read",
+                "min.intron.length",
+                "max.intron.length",
+                "mates.max.gap",
+                "secondary.mapping.mismatches.range",
+                "max.multimapping",
+                "min.report.canonical.junction.overhang",
+                "min.report.noncanonical.junction.overhang",
+                "map.only.reported.juntions"
+               ],
+    hidden:true
+ },{name:"postprocessing and supplementary output",
+    parameters:["two.pass",
+                "detect.chimeric.transcripts",
+                "output.unmapped.reads",
+                "quantify.genes",
+                "output.wiggle.file",
+                "wiggle.signal"
+               ],
+    hidden:true
+ },{name:"output",
+    parameters:["output.format",
+                "HI.flag",
+                "output.prefix"
+               ]
+ }
+]

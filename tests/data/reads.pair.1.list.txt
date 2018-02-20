@@ -1,0 +1,1 @@
+/Users/liefeld/GenePattern/gp_dev/docker/docker-staraligner/tests/data/reads_1.fa
