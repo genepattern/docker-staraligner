@@ -1,0 +1,14 @@
+#
+# ant -f ${GPUNIT_HOME}/build.xml -Dgpunit.diffStripTrailingCR="--strip-trailing-cr" -Dgp.host="gp-beta-ami.genepattern.org" -Dgp.url="https://gp-beta-ami.genepattern.org" -Dgp.user="ted" -Dgp.password="" -Dgpunit.testfolder=`pwd` gpunit
+# 
+#
+name: testStarAligner.1.sam
+module: STAR.aligner
+params: 
+    "reads.pair.1": https://datasets.genepattern.org/data/test_data/Hisat2/reads_1.fa 
+    "star.index": https://datasets.genepattern.org/data/test_data/STAR/reads12index.zip 
+    "output.format": "SAM unsorted"
+assertions:
+    files:
+        STAR.Aligned.out.sam:
+            diff: ./expected_outputs/STAR.aligned.1.out.sam

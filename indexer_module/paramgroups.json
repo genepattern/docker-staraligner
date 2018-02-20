@@ -1,0 +1,15 @@
+[{name:"input and output",
+  parameters:["fasta.file",
+              "GTF.file",
+              "tab.file",
+              "index.dir"
+             ]
+ },{name:"Customization of indexing process",
+    parameters:["overhang",
+                "index.string.length",
+                "bin.size",
+                "RAM.limit"
+               ],
+    hidden:true
+ }
+]
