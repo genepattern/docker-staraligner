@@ -9,8 +9,6 @@ module: STAR.aligner
 params: 
     "reads.pair.1": https://datasets.genepattern.org/data/test_data/Hisat2/reads_1.fa 
     "star.index": https://datasets.genepattern.org/data/test_data/STAR/reads12index.zip
-    "output.format": "BAM unsorted"
+    "output.format": "BAM Unsorted"
 assertions:
-    files:
-        STAR.Aligned.out.sam:
-            diff: ./expected_outputs/STAR.aligned.2.out.bam
+    jobStatus: success
