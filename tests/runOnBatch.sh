@@ -1,5 +1,5 @@
 #!/bin/sh
 
 . runConfig.sh
-. ../../common/testing_scripts/runOnBatch.sh
+. ../common/testing_scripts/runOnBatch.sh
 
