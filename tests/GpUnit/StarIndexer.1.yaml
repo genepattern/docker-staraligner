@@ -1,0 +1,13 @@
+#
+# Example run of CopyNumberInferencePipeline, as run on the gpprod server, 
+# circa the public release of v1.
+# ant -f ${GPUNIT_HOME}/build.xml -Dgpunit.diffStripTrailingCR="--strip-trailing-cr" -Dgp.host="gp-beta-ami.genepattern.org" -Dgp.url="https://gp-beta-ami.genepattern.org" -Dgp.user="ted" -Dgp.password="" -Dgpunit.testfolder=`pwd` gpunit
+# It took about 2 hrs 10 min to run.
+#
+name: testStarIndexer.1.sam
+module: STAR.indexer
+params: 
+    "fasta.file": https://datasets.genepattern.org/data/test_data/Hisat2/reads_1.fa 
+    "index.dir": Genome
+assertions:
+    jobStatus: success

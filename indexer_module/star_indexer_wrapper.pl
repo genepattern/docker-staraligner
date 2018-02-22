@@ -2,7 +2,8 @@ use Getopt::Long;
 use Archive::Zip;
 use File::Path qw(make_path remove_tree);
 
-$star = 'STAR-2.5.2b/bin/Linux_x86_64_static/STAR';
+#$star = 'STAR-2.5.2b/bin/Linux_x86_64_static/STAR';
+$star = '/star_install/STAR-2.5.3a/bin/Linux_x86_64_static/STAR';
 $Nthreads = 4;
 
 GetOptions(\%options,
@@ -46,7 +47,7 @@ $cmd .= " --genomeSAindexNbases $options{'indexstringlength'}";
 $cmd .= " --genomeChrBinNbits $options{'binsize'}";
 $RAM = $options{'RAM'} * 1000000000;
 $cmd .= " --limitGenomeGenerateRAM $RAM";
-#print "$cmd\n"; # for debugging
+print "$cmd\n"; # for debugging
 system($cmd);
 
 # put the index into a zip file and remove it
