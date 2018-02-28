@@ -7,7 +7,6 @@ $star = '/star_install/STAR-2.5.3a/bin/Linux_x86_64_static/STAR';
 $Nthreads = 4;
 
 GetOptions(\%options,
-  "patchesdir=s", # --patchesdir <patches> must be on command-line
   "fastafilelist=s", # is always file 'fasta.file.list.txt'
   "GTFfile=s", # optional in interface
   "tabfile=s", # optional in interface
@@ -24,7 +23,7 @@ $indexdir = $options{'indexdir'};
 make_path $indexdir;
 
 # write the STAR command line and execute it
-$cmd = "$options{patchesdir}/$star --runMode genomeGenerate --runThreadN $Nthreads";
+$cmd = "$star --runMode genomeGenerate --runThreadN $Nthreads";
 open FASTAFILELIST, $options{fastafilelist};
   @fastafiles = <FASTAFILELIST>;
 close FASTAFILELIST;
