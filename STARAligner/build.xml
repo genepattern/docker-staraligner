@@ -26,7 +26,7 @@
   THE SOFTWARE.
 -->
 
-<project basedir="" default="devReleaseModule" name="StarAligner">
+<project basedir="" default="devReleaseModule" name="Star.aligner">
 
     <target name="init">
         <tstamp />
