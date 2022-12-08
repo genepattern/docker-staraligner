@@ -14,27 +14,27 @@ RUN \
 
 # get NBCI Toolkit
 WORKDIR /tmp
-RUN wget http://ftp-trace.ncbi.nlm.nih.gov/sra/ngs/1.3.0/ngs-sdk.1.3.0-linux.tar.gz && \
-    tar xzvf ngs-sdk.1.3.0-linux.tar.gz
+RUN wget https://ftp-trace.ncbi.nlm.nih.gov/sra/ngs/2.9.0/ngs-sdk.2.9.0-linux.tar.gz && \
+    tar xzvf ngs-sdk.2.9.0-linux.tar.gz
 
 # Install  StarAligner
 WORKDIR /star_install
-RUN wget https://github.com/alexdobin/STAR/archive/2.5.3a.tar.gz && \
-    tar -xzf 2.5.3a.tar.gz && \
-    cd STAR-2.5.3a 
+RUN wget https://github.com/alexdobin/STAR/archive/refs/tags/2.7.1a.tar.gz && \
+    tar -xzf 2.7.1a.tar.gz && \
+    cd STAR-2.7.1a 
     
-ENV PATH="/star_install/STAR-2.5.3a/bin/Linux_x86_64:${PATH}"
+ENV PATH="/star_install/STAR-2.7.1a/bin/Linux_x86_64:${PATH}"
 
-RUN    pip install awscli 
+# RUN    pip install awscli 
 
-COPY common/container_scripts/runS3OnBatch.sh /usr/local/bin/runS3OnBatch.sh
-COPY common/container_scripts/runLocal.sh /usr/local/bin/runLocal.sh
+# COPY common/container_scripts/runS3OnBatch.sh /usr/local/bin/runS3OnBatch.sh
+# COPY common/container_scripts/runLocal.sh /usr/local/bin/runLocal.sh
 
-RUN chmod ugo+x /usr/local/bin/runS3OnBatch.sh /usr/local/bin/runLocal.sh 
+# RUN chmod ugo+x /usr/local/bin/runS3OnBatch.sh /usr/local/bin/runLocal.sh 
 
 RUN apt-get update && \
    apt-get install zip --yes
 RUN cpan -f Archive::Zip
 
-CMD ["/usr/local/bin/runS3OnBatch.sh" ]
+# CMD ["/usr/local/bin/runS3OnBatch.sh" ]
 
